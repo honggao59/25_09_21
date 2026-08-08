@@ -1,0 +1,15 @@
+name: Actions Runner Public Probe
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/actions-runner-public-probe.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm hosted runner execution
+        run: |
+          echo "PUBLIC_RUNNER_OK"
+          uname -a
